@@ -25,17 +25,17 @@ string
 */
 
 func Strrev(s string) string {
-        i, j := 0, len(s) - 1
-        sl := make([]byte, len(s))
-        // fmt.Print(reflect.TypeOf(sl))
-        for i < j {
-                tmp := s[j]
-                sl[j] = s[i]
-                sl[i] = tmp
-                i++
-                j--
-        }
-        // fmt.Print(sl)
+	i, j := 0, len(s)-1
+	sl := make([]byte, len(s))
+	// fmt.Print(reflect.TypeOf(sl))
+	for i < j {
+		tmp := s[j]
+		sl[j] = s[i]
+		sl[i] = tmp
+		i++
+		j--
+	}
+	// fmt.Print(sl)
 
-        return string(sl)
+	return string(sl)
 }

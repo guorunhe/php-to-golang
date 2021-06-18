@@ -18,18 +18,18 @@ split_length
 
 */
 func StrSplit(s string, split_length int) []string {
-        if split_length < 1 || split_length > len(s){
-                return []string{s}
-        }
-        res := make([]string, 0)
+	if split_length < 1 || split_length > len(s) {
+		return []string{s}
+	}
+	res := make([]string, 0)
 
-        i := 0
-        for ; i + split_length < len(s); i += split_length {
-                res = append(res, s[i:i + split_length])
-        }
+	i := 0
+	for ; i+split_length < len(s); i += split_length {
+		res = append(res, s[i:i+split_length])
+	}
 
-        if i != len(s) {
-                res = append(res, s[i:len(s)])
-        }
-        return res
+	if i != len(s) {
+		res = append(res, s[i:len(s)])
+	}
+	return res
 }

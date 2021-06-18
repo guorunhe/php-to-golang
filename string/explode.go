@@ -22,32 +22,32 @@ limit
 此函数返回由字符串组成的 array，每个元素都是 string 的一个子串，它们被字符串 separator 作为边界点分割出来。
 */
 func Explode(separator rune, s string, limit int) []string {
-        if limit == 0 {
-                limit = 1
-        }
-        tag := false
-        if limit < 0 {
-                // limit小于零
-                limit = -limit
-                tag = true
-        }
-        res := make([]string, 0)
-        j, count := 0, 0
-        for i, c := range s {
-                if !tag && count < limit - 1 && separator == c {
-                        res = append(res, s[j:i])
-                        j = i + 1
-                        count++
-                } else if tag && separator == c{
-                        res = append(res, s[j:i])
-                        j = i + 1
-                        count++                       
-                }
-        }
-        res = append(res, s[j:len(s)])
+	if limit == 0 {
+		limit = 1
+	}
+	tag := false
+	if limit < 0 {
+		// limit小于零
+		limit = -limit
+		tag = true
+	}
+	res := make([]string, 0)
+	j, count := 0, 0
+	for i, c := range s {
+		if !tag && count < limit-1 && separator == c {
+			res = append(res, s[j:i])
+			j = i + 1
+			count++
+		} else if tag && separator == c {
+			res = append(res, s[j:i])
+			j = i + 1
+			count++
+		}
+	}
+	res = append(res, s[j:len(s)])
 
-        if tag {
-                res = res[:len(res) - limit]
-        }
-        return res
+	if tag {
+		res = res[:len(res)-limit]
+	}
+	return res
 }
