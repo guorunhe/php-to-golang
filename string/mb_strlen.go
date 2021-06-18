@@ -20,5 +20,7 @@ encoding 参数为字符编码。如果省略或是 null，则使用内部字符
 如果给定的 encoding 无效则返回 false。
 */
 func MbStrlen(s string) int {
+        // []rune 和 []byte 区别
+        // https://learnku.com/articles/23411/the-difference-between-rune-and-byte-of-go
         return len([]rune(s))
 }
