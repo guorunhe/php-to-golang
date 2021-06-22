@@ -27,17 +27,11 @@ string
 func Strrev(s string) string {
 	s1 := []rune(s)
 	i, j := 0, len(s1)-1
-	// sl := make([]rune, len(s))
-	// fmt.Print(reflect.TypeOf(sl))
 	for i < j {
 		s1[i], s1[j] = s1[j], s1[i]
-		// tmp := s1[j]
-		// sl[j] = s1[i]
-		// sl[i] = tmp
 		i++
 		j--
 	}
-	// fmt.Print(sl)
 
 	return string(s1)
 }
