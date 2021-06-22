@@ -31,7 +31,7 @@ func Explode(separator rune, s string, limit int) []string {
 		limit = -limit
 		tag = true
 	}
-	res := make([]string, 0)
+	res := make([]string, 0, len(s))
 	j, count := 0, 0
 	for i, c := range s {
 		if !tag && count < limit-1 && separator == c {

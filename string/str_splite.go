@@ -21,7 +21,7 @@ func StrSplit(s string, split_length int) []string {
 	if split_length < 1 || split_length > len(s) {
 		return []string{s}
 	}
-	res := make([]string, 0)
+	res := make([]string, 0, len(s))
 
 	i := 0
 	for ; i+split_length < len(s); i += split_length {
